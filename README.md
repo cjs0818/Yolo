@@ -36,6 +36,7 @@ WORKDIR$ cd yolo
 WORKDIR/yolo$ ./docker_build.sh
 
 -- Change DISPLAY_IP in start.sh according to your system (using ifconfig)
+
 -- Change WORKDIR in start.sh according to your system
 
 
