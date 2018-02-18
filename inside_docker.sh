@@ -1,6 +1,12 @@
 export OS=OSX
-echo $OS
 #export OS=Linux
+
+
+if [ $OS = "OSX" ]
+then
+	echo "OSX"
+else
+	echo "Linux"
 
 #---------------------------------
 # cudnn
@@ -12,3 +18,4 @@ echo "/usr/local/cuda/lib64" >> /etc/ld.so.conf
 ldconfig
 #---------------------------------
 
+fi
