@@ -1,6 +1,10 @@
 # Install Docker
 (At first, install Docker to your system)
 
+* Download Docker CE (Community Edition)
+
+* https://www.docker.com/community-edition
+
 
 # WORKDIR
 (WORKDIR is assummed to be your working directory)
