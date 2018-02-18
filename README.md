@@ -3,6 +3,7 @@ yolo with Docker
 
 # WORKDIR
 (WORKDIR is assummed to be your working directory)
+
 $ cd WORKDIR
 
 # Docker Build
