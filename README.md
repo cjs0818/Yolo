@@ -7,7 +7,7 @@ At first, install Docker to your system
 
 
 # WORKDIR
-(WORKDIR is assummed to be your working directory)
+* WORKDIR is assummed to be your working directory
 
 $ cd WORKDIR
 
@@ -39,9 +39,9 @@ WORKDIR$ cd yolo
 
 WORKDIR/yolo$ ./docker_build.sh
 
--- Change DISPLAY_IP in start.sh according to your system (using ifconfig)
+* Change DISPLAY_IP in start.sh according to your system (using ifconfig)
 
--- Change WORKDIR in start.sh according to your system
+* Change WORKDIR in start.sh according to your system
 
 
 # Start Docker
