@@ -1,5 +1,5 @@
 # Install Docker
-* At first, install Docker to your system
+At first, install Docker to your system
 
 * Download Docker CE (Community Edition)
 
