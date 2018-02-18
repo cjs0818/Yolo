@@ -2,8 +2,8 @@
 yolo with Docker
 
 # WORKDIR
-# WORKDIR is assummed to be your working directory
-cd WORKDIR
+(WORKDIR is assummed to be your working directory)
+$ cd WORKDIR
 
 # Docker Build
 WORKDIR$ git clone git@github.com:cjs0818/yolo.git
