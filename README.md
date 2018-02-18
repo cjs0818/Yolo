@@ -51,4 +51,5 @@ WORKDIR/yolo$ ./start.sh
 
 # Test darknet
 /root/work/darknet$ chmod 755 image_voc.sh
+
 /root/work/darknet$ ./image_voc.sh
