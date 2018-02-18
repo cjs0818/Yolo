@@ -18,6 +18,12 @@ FROM nvidia/cuda
 #--------------------
 # For OpenCV
 #FROM jjanzic/docker-python3-opencv
+#RUN apt-get update && apt-get install -y \
+#    vim \
+#    wget \
+#    libgtk2.0-dev \
+#    pkg-config \
+#    && rm -rf /var/lib/apt/lists/*
 #--------------------
 
 # install ros packages
@@ -29,14 +35,19 @@ FROM nvidia/cuda
 RUN apt-get update && apt-get install -y \
     vim \
     wget \
-    libgtk2.0-dev \
-    pkg-config \
     && rm -rf /var/lib/apt/lists/*
 
 # generate /root/work directory
 WORKDIR /root/work
 # copy .bashrc from host to target /root directory
 ADD .bashrc /root
+
+# setup entrypoint
+#COPY ./inside_docker_cudnn.sh /
+#RUN /inside_docker_cudnn.sh
+
+
+#--------------------------------
 
 #RUN echo 'alias so="source ~/.bashrc"' >> ~/.bashrc
 #RUN echo 'alias ll="ls -al"' >> ~/.bashrc
