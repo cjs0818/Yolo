@@ -8,14 +8,6 @@
 $ cd WORKDIR
 
 
-# Docker Build
-WORKDIR$ git clone git@github.com:cjs0818/yolo.git
-
-WORKDIR$ cd yolo
-
-WORKDIR/yolo$ ./docker_build.sh
-
-
 # Install darknet
 WORKDIR/yolo$ cd ..
 
@@ -34,9 +26,19 @@ WORKDIR/darknet$ wget https://pjreddie.com/media/files/tiny-yolo.weights
 WORKDIR/darknet$ wget https://pjreddie.com/media/files/yolo9000.weights
 
 
-# Start Docker
+# Docker Build
 WORKDIR/darknet$ cd ../yolo
 
+WORKDIR$ git clone git@github.com:cjs0818/yolo.git
+
+WORKDIR$ cd yolo
+
+WORKDIR/yolo$ ./docker_build.sh
+
+-- Change WORKDIR in start.sh according to your system
+
+
+# Start Docker
 WORKDIR/yolo$ ./start.sh
 
 
