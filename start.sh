@@ -1,12 +1,13 @@
 # You should do the following first in the other terminal
 # socat TCP-LISTEN:6000,reuseaddr,fork UNIX-CLIENT:\"$DISPLAY\"
 
-#DISPLAY_IP=$(ifconfig en0 | grep inet | awk '$1=="inet" {print $2}')
-DISPLAY_IP=$(ifconfig enp0s5 | grep inet | awk '$1=="inet" {print $2}')
+#DISPLAY_IP=$(ifconfig enp0s5 | grep inet | awk '$1=="inet" {print $2}')
+#WORKDIR=/home/jschoi/work/Yolo
+DISPLAY_IP=$(ifconfig en0 | grep inet | awk '$1=="inet" {print $2}')
+WORKDIR=/Users/jschoi/work/Yolo
+
 IMAGE_ID=jschoi/yolo
 NAME_ID=jschoi_yolo
-WORKDIR=/home/jschoi/work/Yolo
-#WORKDIR=/Users/jschoi/work/Yolo
 
 #IMAGE_ID=pristine70/ros-kinetic:gazebo8 
 #IMAGE_ID=gazebo8
