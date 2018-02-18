@@ -1,5 +1,5 @@
-# Yolo
-yolo with Docker
+# Install Docker
+(At first, install Docker to your system)
 
 
 # WORKDIR
