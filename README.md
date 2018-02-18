@@ -3,7 +3,7 @@
 
 * Download Docker CE (Community Edition)
 
-* https://www.docker.com/community-edition
+ * https://www.docker.com/community-edition
 
 
 # WORKDIR
