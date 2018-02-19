@@ -1,15 +1,16 @@
-# You should do the following first in the other terminal
+# If OS is OSX then,
+# you should do the following first in the other terminal
 # socat TCP-LISTEN:6000,reuseaddr,fork UNIX-CLIENT:\"$DISPLAY\"
 
-DOCKER=nvidia-docker  
-#DOCKER=docker
+#DOCKER=nvidia-docker  
+DOCKER=docker
 
-#EN0=en0
+EN0=en0
 #EN0=enp0s5
-EN0=enp0s31f6
+#EN0=enp0s31f6
 
-#WORKDIR=/Users/jschoi/work/Yolo
-WORKDIR=/home/jschoi/work/Yolo
+WORKDIR=/Users/jschoi/work/Yolo
+#WORKDIR=/home/jschoi/work/Yolo
 
 #-------------
 DISPLAY_IP=$(ifconfig $EN0 | grep inet | awk '$1=="inet" {print $2}')
@@ -28,10 +29,18 @@ NAME_ID=jschoi_yolo
 #IMAGE_ID=openhs/ubuntu-neidia
 
 #  nvidia-docker run -it --rm \
+
+#--------------------------------
+XDISP=DISPLAY=$DISPLAY_IP:0  # for OSX
+#XDISP="DISPLAY"             # for Linux
+#    --env "DISPLAY" \
 #    --env DISPLAY=$DISPLAY_IP:0 \
+#--------------------------------
+
+xhost + $DISPLAY_IP
 
 $DOCKER run -it --rm \
-    --env "DISPLAY" \
+    --env $XDISP \
     --env="QT_X11_NO_MITSHM=1" \
     --env LIBGL_ALWAYS_INDIRECT=1 \
     --volume $XSOCK:$XSOCK:ro \
