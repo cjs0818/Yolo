@@ -7,6 +7,7 @@ DOCKER=nvidia-docker
 #EN0=en0
 #EN0=enp0s5
 EN0=enp0s31f6
+
 #WORKDIR=/Users/jschoi/work/Yolo
 WORKDIR=/home/jschoi/work/Yolo
 
