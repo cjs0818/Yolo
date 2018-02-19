@@ -49,12 +49,29 @@ At first, install Docker to your system
 
 # Start Docker
 
+* Set up parameters such as DOCKER (nvidia-docker or docker), EN0 (ifconfig ...), WORKDIR in the 'start.sh' file
+
+  ```
+  DOCKER=nvidia-docker
+  #DOCKER=docker
+
+  #EN0=en0
+  #EN0=enp0s5
+  EN0=enp0s31f6
+  
+  #WORKDIR=/Users/jschoi/work/Yolo
+  WORKDIR=/home/jschoi/work/Yolo
+  ```
+
+* Execute 'start.sh' file
+
   ```
   WORKDIR/yolo$ ./start.sh
 
   # Compile darknet inside Docker
   /root/work$ cd /root/work/darknet
 
+  /root/work/darknet$ make clean
   /root/work/darknet$ make
 
   # Test darknet
