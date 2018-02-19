@@ -35,12 +35,16 @@ FROM nvidia/cuda
 RUN apt-get update && apt-get install -y \
     vim \
     wget \
+    x11-apps \
     && rm -rf /var/lib/apt/lists/*
 
 # generate /root/work directory
 WORKDIR /root/work
 # copy .bashrc from host to target /root directory
 ADD .bashrc /root
+
+# setup environment variables?
+ENV DISPLAY :0
 
 # setup entrypoint
 #COPY ./inside_docker_cudnn.sh /

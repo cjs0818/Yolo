@@ -13,6 +13,9 @@ WORKDIR=/home/jschoi/work/Yolo
 
 #-------------
 DISPLAY_IP=$(ifconfig $EN0 | grep inet | awk '$1=="inet" {print $2}')
+XSOCK=/tmp/.X11-unix
+#XAUTH=/tmp/.docker.xauth
+#xauth nlist :0 | sed -e 's/^..../ffff/' | xauth -f $XAUTH nmerge -
 #-------------
 
 IMAGE_ID=jschoi/yolo
@@ -23,13 +26,15 @@ NAME_ID=jschoi_yolo
 #IMAGE_ID=benblumeristuary/gazebo8_with_ros
 #IMAGE_ID=kinetic-ros-base:rqt
 #IMAGE_ID=openhs/ubuntu-neidia
-#  nvidia-docker run -it --rm \
 
+#  nvidia-docker run -it --rm \
+#    --env DISPLAY=$DISPLAY_IP:0 \
 
 $DOCKER run -it --rm \
-    --env DISPLAY=$DISPLAY_IP:0 \
+    --env "DISPLAY" \
+    --env="QT_X11_NO_MITSHM=1" \
     --env LIBGL_ALWAYS_INDIRECT=1 \
-    --volume /tmp/.X11-unix:/tmp/.X11-unix:rw \
+    --volume $XSOCK:$XSOCK:ro \
     --volume $WORKDIR:/root/work:rw \
     --name $NAME_ID \
     -p 22345:11345 \
